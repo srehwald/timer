@@ -7,6 +7,7 @@
     <title>Timer</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bulma.css">
+    <script type="text/javascript" src="js/mithril.min.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
     </section>
     <section class="hero has-text-centered">
         <div class="hero-body">
-            Here comes the timer!
+            <div id="timer"></div>
             <div class="container">
                 <div class="field has-addons has-addons-centered">
                     <p class="control">
@@ -36,6 +37,14 @@
                     <p class="control">
                         <a class="button is-danger">Stop</a>
                     </p>
+                </div>
+                <div class="field has-addons has-addons-centered">
+                  <p class="control">
+                    <label class="checkbox">
+                      <input type="checkbox">
+                      Display seconds</a>
+                    </label>
+                  </p>
                 </div>
             </div>
         </div>
@@ -55,6 +64,7 @@
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="js/timer.js"></script>
 </body>
 
 </html>
