@@ -13,12 +13,6 @@ function start() {
     // TODO remove hard coded 2 mins
     until.setMinutes(now.getMinutes() + 2);
     
-    var distance = until.getTime() - now.getTime();
-    //console.log(distance);
-    time.minutes = Math.floor(distance / (1000 * 60));
-    time.seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    m.redraw();
-    
     // avoid multiple intervals running at the same time
     if(started)
         clearInterval(timer);
@@ -90,7 +84,7 @@ var Timer = {
             }, String(time.seconds).length < 2 ? "0" + time.seconds : time.seconds)
             ]);
 
-        if (displaySeconds)
+        if (displaySeconds || time.minutes < 1)
             return m("div", [
                 minutes,
                 m("div", {
