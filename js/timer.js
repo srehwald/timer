@@ -11,9 +11,10 @@ function start() {
     var now = new Date();
     var until = new Date();
     // TODO remove hard coded 2 mins
-    until.setMinutes(now.getMinutes() + 1);
+    until.setMinutes(now.getMinutes() + 2);
     
     var distance = until.getTime() - now.getTime();
+    //console.log(distance);
     time.minutes = Math.floor(distance / (1000 * 60));
     time.seconds = Math.floor((distance % (1000 * 60)) / 1000);
     m.redraw();
@@ -27,21 +28,22 @@ function start() {
         var now = new Date().getTime();
         // Find the distance between now an the count down date
         var distance = until.getTime() - now;
+        //console.log(distance);
 
         // Time calculations for days, hours, minutes and seconds
         time.minutes = Math.floor(distance / (1000 * 60));
-        // TODO to few seconds in the beginning
         time.seconds = Math.floor((distance % (1000 * 60)) / 1000);
         console.log(time.minutes + ":" + time.seconds);
         
         if (distance <= 0 || !started) {
             time.minutes = 0;
             time.seconds = 0;
+            started = false;
             clearInterval(timer);
         }
         
         m.redraw();
-    }, 1000);
+    }, 500);
 
 }
 
