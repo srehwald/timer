@@ -91,7 +91,7 @@ var Timer = {
             }, "MIN"),
                 m("h1", {
                 class: "title is-1",
-                style: "font-size: 8em"
+                style: "font-size: 10em"
             }, time.minutes)
             ]);
         var seconds = m("div", {
@@ -102,7 +102,7 @@ var Timer = {
             }, "SEC"),
                 m("h1", {
                 class: "title is-1",
-                style: "font-size: 8em"
+                style: "font-size: 10em"
             }, String(time.seconds).length < 2 ? "0" + time.seconds : time.seconds)
             ]);
 
@@ -116,7 +116,7 @@ var Timer = {
                 }, [
                     m("h1", {
                         class: "title is-1",
-                        style: "font-size: 8em"
+                        style: "font-size: 10em"
                     }, ":")
                 ]),
                 seconds
