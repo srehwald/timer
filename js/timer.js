@@ -8,10 +8,16 @@ var time = {
 }
 
 function start() {
+    var minutes = getMinutes()
+    console.log(minutes);
+    if (isNaN(minutes)) {
+        alert("Please enter an integer number!");
+        return;
+    }
+    
     var now = new Date();
     var until = new Date();
-    // TODO remove hard coded 2 mins
-    until.setMinutes(now.getMinutes() + 2);
+    until.setMinutes(now.getMinutes() + minutes);
     
     // avoid multiple intervals running at the same time
     if(started)
@@ -47,6 +53,11 @@ function stop() {
     time.minutes = 0;
     time.seconds = 0;
     m.redraw();
+}
+
+function getMinutes() {
+    var minutes = parseInt(document.getElementById("minutes").value);
+    return minutes;
 }
 
 function handleSeconds(checkbox) {
