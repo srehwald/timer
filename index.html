@@ -1,16 +1,73 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Timer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bulma.css">
+    <script type="text/javascript" src="js/mithril.min.js"></script>
 </head>
 
 <body>
-    <div>
-        Hello World!
-    </div>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    A simple web-based Timer
+                </h1>
+                <h2 class="subtitle">
+                    Purely built with HTML, JavaScript and &hearts;
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section class="hero has-text-centered">
+        <div class="hero-body">
+            <div id="timer"></div>
+            <div class="container">
+                <div class="field has-addons has-addons-centered">
+                    <p class="control has-icons-left">
+                        <input id="minutes" class="input" type="text" placeholder="Number of Minutes">
+                        <span class="icon is-small is-left">
+                            <i class="fa fa-clock-o"></i>
+                        </span>
+                    </p>
+                    <p class="control">
+                        <a id="start" class="button is-success" onclick="start();">Start</a>
+                    </p>
+                    <p class="control">
+                        <a id="stop" class="button is-danger" onclick="stop();">Stop</a>
+                    </p>
+                </div>
+                <div class="field has-addons has-addons-centered">
+                    <p class="control">
+                        <label class="checkbox">
+                        <input type="checkbox" onchange="handleSeconds(this);">
+                            Don't display seconds (if more than one minute left)
+                        </label>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    Made with &hearts; by <a href="https://rehwald.me">Simon</a>.
+                </p>
+                <p>
+                    <a class="icon" href="https://github.com/srehwald/timer">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </p>
+                <p>Uses <a href="http://bulma.io">Bulma</a> & <a href="https://mithril.js.org">Mithril</a></p>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/timer.js"></script>
 </body>
+
 </html>
