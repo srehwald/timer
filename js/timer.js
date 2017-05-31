@@ -50,7 +50,7 @@ function start() {
         }
         
         m.redraw();
-    }, 500);
+    }, 250);
 
 }
 
