@@ -108,7 +108,7 @@ var Timer = {
 
         // if displaySeconds is set to true or number of minutes is less than 1, display the seconds
         if (displaySeconds || time.minutes < 1)
-            return m("div", [
+            return m("div", { style: "font-variant-numeric: tabular-nums;" }, [
                 minutes,
                 // colon (:) between minutes and seconds
                 m("div", {
